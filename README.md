@@ -23,21 +23,21 @@ These Intrinsics will be Used if Available, if not the Algorithms shall fall-bac
 </details>
 
 <details>
-<summary><strong>🔐 Hashing</strong></summary>
+<summary><strong>🔐 Data-Hashing</strong></summary>
 
 - Implements a high-performance CRC32C Implementation Utilizing Hardware Intrinsics for Acceleration, Safely Falls back to Software Variants if Intrinsics are not Detected on Host CPU
 - Optimized for throughput in large data blocks.
 </details>
 
 <details>
-<summary><strong>🔏 Encryption</strong></summary>
+<summary><strong>🔏 AES-128 & HC-128 Encryption</strong></summary>
 
 - Intrinsic-accelerated routines for symmetric encryption primitives (AES-NI Intrinsic Accelerated AES-128 CTR-Mode Cipher, and an SSE2 128-bit Register-Optimized HC128 Implementation).
 - Thread-safe, inlined for minimal call overhead.
 </details>
 
 <details>
-<summary><strong>⚙️ Multi-threaded Engines</strong></summary>
+<summary><strong>⚙️ OpenMP Multi-threaded Engines</strong></summary>
 
 - Parallel processing using OpenMP.
 - User-defined chunking enables efficient utilization of multi-core systems.
