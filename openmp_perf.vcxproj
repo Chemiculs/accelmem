@@ -136,7 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cxx" />
+    <ClCompile Include="example.cxx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="accelmem.hxx" />
