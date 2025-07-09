@@ -63,7 +63,8 @@ These Intrinsics will be Used if Available, if not the Algorithms shall fall-bac
 
 * By Default, accelmem only begins Utilizing OpenMP for Multithreading when dealing with ~100mb Data Allocations, this Threshhold may be Modulated by re-defining this Macro :
 
-'''cpp
+```cpp
 #define OMP_MEM_THR_THRESHHOLD <Threshhold_in_Bytes>
+```
 
 </details>
