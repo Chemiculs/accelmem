@@ -5,8 +5,7 @@
 
 ## ▶️ Description
 Header-only library providing highly optimized memory primitives (memset, memcpy, memmove), Data-Hashing algorithms, and Encryption utilities accelerated with x86 SIMD (SSE/AVX/AVX2). It supports Multi-threading via OpenMP and performs runtime CPU feature detection.  
-
-The `main.cxx` file demonstrates example usage of the library, and is in no way necessary to include in your Project.
+The `example.cxx` file demonstrates example usage of the library.
 
 The Library will Query the Host Hardware for CPU Intrinsics, Specifically SSE2 - 4.2, AVX, AVX2, and AES-NI. 
 These Intrinsics will be Used if Available, if not the Algorithms shall fall-back to another Highly-Optimized Implementation (Excluding AES-128 - Which REQUIRES AES-NI Intrinsics for now)
