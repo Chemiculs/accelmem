@@ -5,8 +5,7 @@
 
 ## ▶️ Description
 Header-only library providing highly optimized memory primitives (memset, memcpy, memmove), Data-Hashing algorithms, and Encryption utilities accelerated with x86 SIMD (SSE/AVX/AVX2). It supports Multi-threading via OpenMP and performs runtime CPU feature detection.  
-
-The `main.cxx` file demonstrates example usage of the library, and is in no way necessary to include in your Project.
+The `example.cxx` file demonstrates example usage of the library.
 
 The Library will Query the Host Hardware for CPU Intrinsics, Specifically SSE2 - 4.2, AVX, AVX2, and AES-NI. 
 These Intrinsics will be Used if Available, if not the Algorithms shall fall-back to another Highly-Optimized Implementation (Excluding AES-128 - Which REQUIRES AES-NI Intrinsics for now)
@@ -24,21 +23,21 @@ These Intrinsics will be Used if Available, if not the Algorithms shall fall-bac
 </details>
 
 <details>
-<summary><strong>🔐 Hashing</strong></summary>
+<summary><strong>🔐 Data-Hashing</strong></summary>
 
 - Implements a high-performance CRC32C Implementation Utilizing Hardware Intrinsics for Acceleration, Safely Falls back to Software Variants if Intrinsics are not Detected on Host CPU
 - Optimized for throughput in large data blocks.
 </details>
 
 <details>
-<summary><strong>🔏 Encryption</strong></summary>
+<summary><strong>🔏 AES-128 & HC-128 Encryption</strong></summary>
 
 - Intrinsic-accelerated routines for symmetric encryption primitives (AES-NI Intrinsic Accelerated AES-128 CTR-Mode Cipher, and an SSE2 128-bit Register-Optimized HC128 Implementation).
 - Thread-safe, inlined for minimal call overhead.
 </details>
 
 <details>
-<summary><strong>⚙️ Multi-threaded Engines</strong></summary>
+<summary><strong>⚙️ OpenMP Multi-threaded Engines</strong></summary>
 
 - Parallel processing using OpenMP.
 - User-defined chunking enables efficient utilization of multi-core systems.
@@ -54,6 +53,8 @@ These Intrinsics will be Used if Available, if not the Algorithms shall fall-bac
 ## ▶️ Usage Notes
 
 <details>
+
+* Due to the Mechanism of HC-128, you MUST Pass the same Key + IV EVERY TIME you Call the Cipher
 
 * AES-128 CTR Has no fallback if Intrinsic Instructions are Unavailable at the Moment, the Functions will simply return False in this Case
 
