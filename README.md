@@ -54,6 +54,8 @@ These Intrinsics will be Used if Available, if not the Algorithms shall fall-bac
 
 <details>
 
+* Due to the Mechanism of HC-128, you MUST Pass the same Key + IV EVERY TIME you Call the Cipher
+
 * AES-128 CTR Has no fallback if Intrinsic Instructions are Unavailable at the Moment, the Functions will simply return False in this Case
 
 * CRC32C Does not Support Multi-Threading unfortunately, due to the Design of the Cycle-Redundancy-Check Algorithm, as well as the HC-128 Encryption Cipher (AES, and General Memory Operations DO Support MT)
