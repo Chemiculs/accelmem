@@ -15,14 +15,6 @@ private:
 
 #pragma region Algorithm Constants
 
-	// ShiftRows indices for AES
-	static const constexpr uint8_t shift_rows[16] {
-		0, 5, 10, 15,
-		4, 9, 14, 3,
-		8, 13, 2, 7,
-		12, 1, 6, 11
-	};
-
 	static const constexpr std::uint32_t nr = 10;
 
 #pragma endregion
@@ -39,9 +31,9 @@ private:
 
 	inline void FASTCALL expand_key(
 
-		void* key,
+		void*		key,
 
-		const bool destroy_key = false
+		const bool	destroy_key = false
 
 	) noexcept {
 
@@ -364,9 +356,9 @@ public:
 
 	FORCE_INLINE FASTCALL aes128_ctr(
 		
-		void* key, 
+		void*		key, 
 		
-		const bool wipe_key = false
+		const bool	wipe_key = false
 	
 	) noexcept {
 

@@ -177,6 +177,14 @@ std::int32_t main() noexcept {
 
 	std::cout << "[+] block1 aes128-ctr Decrypted / Original CRC32 Hash: 0x" << crc.get_crc() << std::endl;
 
+	std::uint32_t arr[2]{0, 0};
+
+	hc.encrypt((std::uint8_t*)&arr[0], (std::uint8_t*)&arr[0], sizeof(int), key, iv);
+
+	std::cout << arr[0] << std::endl;
+
+	std::cout << arr[1] << std::endl;
+
 	SECURE_ZERO_MEMORY(key, sizeof(key));
 
 	SECURE_ZERO_MEMORY(iv, sizeof(iv));

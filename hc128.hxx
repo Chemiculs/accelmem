@@ -176,13 +176,13 @@ private:
 
 	inline void FASTCALL expand_w(
 
-		void* key,
+		void*		key,
 
-		void* iv,
+		void*		iv,
 
-		const bool destroy_key	= false,
+		const bool	destroy_key	= false,
 
-		const bool destroy_iv	= false
+		const bool	destroy_iv	= false
 
 	) noexcept {
 
@@ -250,21 +250,21 @@ public:
 
 	FORCE_INLINE void FASTCALL encrypt_range(
 
-		std::uint8_t* dst,
+		std::uint8_t*		dst,
 
 		const std::uint8_t* src,
 
-		const std::size_t offset,
+		const std::size_t	offset,
 
-		const std::size_t len,
+		const std::size_t	len,
 
-		void* key				= nullptr,
+		void*				key,
 
-		void* iv				= nullptr,
+		void*				iv,
 
-		const bool destroy_key	= false,
+		const bool			destroy_key	= false,
 
-		const bool destroy_iv	= false
+		const bool			destroy_iv	= false
 
 	) noexcept {
 
@@ -349,19 +349,19 @@ public:
 
 	FORCE_INLINE void FASTCALL encrypt(
 
-		std::uint8_t* dst,
+		std::uint8_t*		dst,
 
 		const std::uint8_t* src,
 
-		const std::size_t len,
+		const std::size_t	len,
 
-		void* key				= nullptr,
+		void*				key,
 
-		void* iv				= nullptr,
+		void*				iv,
 
-		const bool destroy_key	= false,
+		const bool			destroy_key	= false,
 
-		const bool destroy_iv	= false
+		const bool			destroy_iv	= false
 
 	) noexcept {
 
@@ -390,21 +390,21 @@ public:
 
 	FORCE_INLINE void FASTCALL decrypt_range(
 
-		std::uint8_t* dst,
+		std::uint8_t*		dst,
 
 		const std::uint8_t* src,
 
-		const std::size_t offset,
+		const std::size_t	offset,
 
-		const std::size_t len,
+		const std::size_t	len,
 
-		void* key				= nullptr,
+		void*				key,
 
-		void* iv				= nullptr,
+		void*				iv,
 
-		const bool destroy_key	= false,
+		const bool			destroy_key	= false,
 
-		const bool destroy_iv	= false
+		const bool			destroy_iv	= false
 
 	) noexcept {
 
@@ -433,19 +433,19 @@ public:
 
 	FORCE_INLINE void FASTCALL decrypt(
 	
-		std::uint8_t* dst,
+		std::uint8_t*		dst,
 		
 		const std::uint8_t* src,
 
-		const std::size_t len,
+		const std::size_t	len,
 
-		void* key				= nullptr,
+		void*				key,
 
-		void* iv				= nullptr,
+		void*				iv,
 
-		const bool destroy_key	= false,
+		const bool			destroy_key	= false,
 
-		const bool destroy_iv	= false
+		const bool			destroy_iv	= false
 
 	) noexcept {
 

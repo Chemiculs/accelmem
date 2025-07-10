@@ -5,11 +5,11 @@
 
 #include <nmmintrin.h>
 
-#define MM_DO_BLOCK_PREFETCH()													\
-			if (!(iterator % 0x40)) {											\
-				auto* ptr = data + iterator;									\
-				for (std::size_t i = 0; i < std::min(16ui64, ((len - iterator) / 0x40) + (((len - iterator) % 0x40) ? 1 : 0)); ++i)							\
-					_mm_prefetch((const char*)(ptr + (0x40 * i)), _MM_HINT_NTA);\
+#define MM_DO_BLOCK_PREFETCH()																										\
+			if (!(iterator % 0x40)) {																								\
+				auto* ptr = data + iterator;																						\
+				for (std::size_t i = 0; i < std::min(16ui64, ((len - iterator) / 0x40) + (((len - iterator) % 0x40) ? 1 : 0)); ++i)	\
+					_mm_prefetch((const char*)(ptr + (0x40 * i)), _MM_HINT_NTA);													\
 			}
 
 class crc32 {
@@ -49,7 +49,7 @@ private:
 	
 		const std::uint8_t* data,
 
-		const std::size_t len
+		const std::size_t	len
 	
 	) noexcept {
 
@@ -63,7 +63,7 @@ private:
 
 		std::size_t iterator = 0;
 
-#define CRC_PROCESS_BLOCK(BLOCK)													\
+#define CRC_PROCESS_BLOCK(BLOCK)												\
 				for (std::uint32_t x = 0; x < sizeof(BLOCK); ++x) {				\
 					std::uint8_t low8 = static_cast<std::uint8_t>(crc ^ BLOCK); \
 					crc = crc32c_galois_field_table[low8] ^ (crc >> 8);			\
@@ -174,7 +174,7 @@ public:
 	
 		const std::uint8_t* data,
 
-		const std::size_t len
+		const std::size_t	len
 
 	) noexcept {
 
